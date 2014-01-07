@@ -39,7 +39,6 @@ markdown.lua: mk_lua.so
 	@echo Fetching markdown.md
 	$(lua get_markdown())
 
-CFLAGS += -Imake-4.0
 mk_lua.so: mk_lua.c
 	$(CC) $(CFLAGS) -Wall -Wextra -shared -fPIC -o $@ $<
 
