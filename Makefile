@@ -7,8 +7,8 @@ endif
 all: README.html
 
 README.html: README.md markdown.lua
-	@echo Making README.html out of README.md
-	$(lua gen_readme("README.md", "README.html"))
+	@echo Making $@ out of $<
+	$(lua gen_readme("$<", "$@"))
 
 markdown.lua: mk_lua.so
 	@echo Fetching markdown.md
