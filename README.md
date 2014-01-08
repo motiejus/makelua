@@ -13,3 +13,5 @@ This example *in a single make process* does the following:
 
 Why is this useful? Practically not useful. Use Guille. But embedding
 everywhere Lua is fun.
+
+Requires GNU Make 4.0 and Lua 5.1+ (tested on Lua 5.1)
