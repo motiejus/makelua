@@ -17,7 +17,7 @@ markdown.lua: mk_lua.so
 CFLAGS += $(shell pkg-config --libs --cflags lua5.1 2>/dev/null || \
 		  pkg-config --libs --cflags lua5.2 || echo -lua_not_found)
 mk_lua.so: mk_lua.c
-	$(CC) $(CFLAGS) -Wall -Wextra -shared -fPIC -o $@ $<
+	$(CC) $(CFLAGS) -Wall -shared -fPIC -o $@ $<
 
 clean:
 	rm -f mk_lua.so README.html markdown.lua
