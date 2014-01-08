@@ -1,9 +1,9 @@
 Embedded Lua in GNU Make
 ------------------------
 
-I decided to play a bit with "load" functionality and embedded Lua into Make.
-This repository is a good example how to use "load" and actually embed
-absolutely anything into GNU Make and execute funky stuff in-process.
+I decided to play a bit with "load" functionality and dynamically embedded Lua
+into Make. This repository is a good example how to use "load" and actually
+embed absolutely anything into GNU Make and execute funky stuff in-process.
 
 Background: GNU Make 4.0 provides GNU Guile (a Lisp dialect) out of the box. I
 wanted to show that with just a little C it is equally possible to embed Lua
