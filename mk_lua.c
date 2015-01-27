@@ -42,6 +42,6 @@ int mk_lua_gmk_setup() {
     }
     luaL_openlibs(L);
 
-    gmk_add_function ("lua", run_lua, 1, 1, 0);
+    gmk_add_function("lua", run_lua, 1, 1, 0);
     return 1;
 }
