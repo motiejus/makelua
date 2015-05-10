@@ -17,4 +17,9 @@ This example *in a single process* does the following:
 
 Requires GNU Make 4.0, Lua 5.1+ (tested on Lua 5.1) and [luasocket] library.
 
+TODO
+----
+
+What happens with ``make -j``?
+
 [luasocket]: w3.impa.br/~diego/software/luasocket/
