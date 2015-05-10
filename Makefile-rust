@@ -1,0 +1,20 @@
+-load mk_hello.so
+ifneq ($(findstring mk_hello.so,$(.LOADED)),)
+endif
+
+.PHONY: all clean
+all: README.html
+
+README.html: README.md markdown.lua
+	@echo Making $@ out of $<
+	$(lua gen_readme("$<", "$@"))
+
+markdown.lua: mk_hello.so
+	@echo Fetching markdown.md
+	$(lua get_markdown())
+
+mk_hello.so: mk_hello.rs
+	rustc $< -o $@
+
+clean:
+	rm -f mk_hello.so README.html markdown.lua
