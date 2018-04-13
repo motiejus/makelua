@@ -14,8 +14,10 @@ markdown.lua: mk_lua.so
 	@echo Fetching markdown.md
 	$(lua get_markdown())
 
-CFLAGS += $(shell pkg-config --libs --cflags lua5.1 2>/dev/null || \
-		  pkg-config --libs --cflags lua5.2 || echo -lua_not_found)
+CFLAGS += $(shell \
+		  pkg-config --libs --cflags lua5.1 2>/dev/null || \
+		  pkg-config --libs --cflags lua5.2 2>/dev/null || \
+		  pkg-config --libs --cflags lua5.3 2>/dev/null || echo -lua_not_found)
 mk_lua.so: mk_lua.c
 	$(CC) -o $@ $< -Wall -shared -fPIC $(CFLAGS)
 
